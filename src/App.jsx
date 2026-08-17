@@ -2,8 +2,10 @@ import React, { useState } from 'react'
 import HomePage from './components/HomePage.jsx'
 import AddBikeCatalog from './components/AddBikeCatalog.jsx'
 import EngineeringBay from './components/EngineeringBay.jsx'
+import Onboarding from './components/Onboarding.jsx'
 
 const GARAGE_KEY = 'bikelab:garage'
+const ONBOARD_KEY = 'bikelab:onboarding-done'
 
 function loadGarage() {
   try {
@@ -14,10 +16,19 @@ function loadGarage() {
   }
 }
 
+function hasSeenOnboarding() {
+  try {
+    return localStorage.getItem(ONBOARD_KEY) === '1'
+  } catch {
+    return false
+  }
+}
+
 export default function App() {
   const [view, setView] = useState('home')
   const [garage, setGarage] = useState(loadGarage)
   const [activeId, setActiveId] = useState(null)
+  const [showOnboarding, setShowOnboarding] = useState(!hasSeenOnboarding())
 
   const persist = (next) => {
     setGarage(next)
@@ -29,6 +40,10 @@ export default function App() {
   const openBay = (id) => {
     setActiveId(id)
     setView('bay')
+  }
+
+  if (showOnboarding) {
+    return <Onboarding onComplete={() => setShowOnboarding(false)} />
   }
 
   if (view === 'bay') return <EngineeringBay bikeId={activeId} onBack={() => setView('home')} />

@@ -36,67 +36,71 @@ export default function CLC250Schematic({ health, selected, onSelect, onHover, o
           groundY={G}
         />
       )}
-      {!plain && <Callout x={350} y={248} dx={-86} dy={-44} text="ROUND LED HEADLIGHT" />}
+      {!plain && <Callout x={320} y={256} dx={-86} dy={-44} text="ROUND LED HEADLIGHT" />}
       {!plain && <Callout x={500} y={470} dx={-80} dy={44} text="LIQUID-COOLED 249CC" />}
-      {!plain && <Callout x={690} y={474} dx={60} dy={40} text="CHROME SLASH-CUT" />}
-      {!plain && <Callout x={480} y={292} dx={-80} dy={-36} text="WATER-DROP TANK" />}
+      {!plain && <Callout x={700} y={476} dx={60} dy={40} text="CHROME SLASH-CUT" />}
+      {!plain && <Callout x={480} y={278} dx={-80} dy={-36} text="WATER-DROP TANK" />}
+      {!plain && <Callout x={660} y={336} dx={60} dy={-40} text="TWIN REAR SHOCKS" />}
       {!plain && <LogoBlock cx={F.x} cy={F.y + 60} text="CL-C" w={44} />}
       {!plain && <LogoBlock cx={R.x} cy={R.y + 60} text="CFMOTO" w={56} />}
 
-      {/* frame */}
+      {/* frame — low cruiser backbone, relaxed geometry */}
       {P('frame',
-        <path className="hitpath" d="M 342 316 C 410 356 490 396 580 440 L 780 470 M 368 250 L 570 272 L 640 300 M 640 300 L 720 296 M 720 296 L 748 292" strokeWidth={24} />,
+        <path className="hitpath" d="M 338 332 C 408 368 488 406 578 444 L 782 474 M 362 258 L 562 280 L 642 308 M 642 308 L 724 304 M 724 304 L 750 300" strokeWidth={24} />,
         {
           children: (
             <g>
-              <path d="M 368 250 C 430 258 500 268 560 274 L 640 300" className="pstroke" />
-              <path d="M 352 318 C 390 354 470 400 560 432" className="pstroke" />
-              <path d="M 560 432 L 765 468 L 758 480 L 560 446 Z" className="pstroke-thin" />
-              <path d="M 640 300 L 720 296 L 748 292" className="pstroke-thin" />
+              <path d="M 362 258 C 428 264 500 274 562 282 L 642 308" className="pstroke" />
+              <path d="M 348 330 C 392 362 470 404 560 436" className="pstroke" />
+              <path d="M 560 436 L 765 468 L 758 480 L 560 450 Z" className="pstroke-thin" />
+              <path d="M 642 308 L 724 304 L 750 300" className="pstroke-thin" />
             </g>
           ),
         }
       )}
 
-      {/* engine */}
+      {/* engine — parallel twin with V-twin styling */}
       {P('engine',
-        <path className="hitpath" d="M 440 356 C 460 346 504 344 534 354 C 552 362 570 378 578 404 C 582 424 572 440 554 450 C 526 460 486 460 468 450 C 452 442 446 426 450 408 C 454 388 448 372 440 356 Z" strokeWidth={22} />,
+        <path className="hitpath" d="M 436 362 C 456 350 500 348 530 358 C 548 366 566 380 574 406 C 578 424 568 440 550 450 C 522 460 482 460 464 450 C 448 442 442 426 446 408 C 450 388 442 374 436 362 Z" strokeWidth={22} />,
         {
           children: (
             <g>
-              <path d="M 448 358 C 462 348 504 346 532 356 C 548 362 566 376 576 402 C 580 420 570 438 552 448 C 524 458 480 458 462 448 C 448 440 442 424 446 406 C 450 384 444 370 448 358 Z" className="pfill" fill="rgba(0,229,255,0.04)" />
-              <line x1={456} y1={382} x2={570} y2={382} className="pstroke-thin" opacity={0.55} />
-              <line x1={458} y1={396} x2={572} y2={396} className="pstroke-thin" opacity={0.55} />
-              <line x1={464} y1={410} x2={566} y2={410} className="pstroke-thin" opacity={0.55} />
+              <path d="M 444 364 C 460 352 502 350 530 360 C 546 366 564 380 574 404 C 578 422 568 440 550 450 C 522 460 478 460 460 450 C 446 442 440 426 444 406 C 448 386 442 372 444 364 Z" className="pfill" fill="rgba(0,229,255,0.04)" />
+              <line x1={452} y1={388} x2={568} y2={388} className="pstroke-thin" opacity={0.55} />
+              <line x1={454} y1={402} x2={570} y2={402} className="pstroke-thin" opacity={0.55} />
+              <line x1={460} y1={416} x2={564} y2={416} className="pstroke-thin" opacity={0.55} />
+              <path d="M 470 380 C 478 374 492 372 504 376" className="pstroke-thin" opacity={0.35} />
+              <path d="M 472 396 C 480 390 494 388 506 392" className="pstroke-thin" opacity={0.35} />
             </g>
           ),
         }
       )}
 
-      {/* cooling */}
+      {/* cooling — radiator with vertical fins */}
       {P('cooling',
-        <path className="hitpath" d="M 412 366 L 444 366 L 448 412 L 420 412 Z" strokeWidth={20} />,
+        <path className="hitpath" d="M 406 372 L 438 372 L 442 418 L 414 418 Z" strokeWidth={20} />,
         {
           children: (
             <g>
-              <path d="M 414 370 L 442 370 L 446 410 L 418 410 Z" className="pfill" fill="rgba(0,229,255,0.05)" />
-              <line x1={422} y1={372} x2={420} y2={408} className="pstroke-thin" opacity={0.6} />
-              <line x1={430} y1={372} x2={428} y2={408} className="pstroke-thin" opacity={0.6} />
+              <path d="M 408 376 L 436 376 L 440 416 L 412 416 Z" className="pfill" fill="rgba(0,229,255,0.05)" />
+              <line x1={418} y1={378} x2={416} y2={414} className="pstroke-thin" opacity={0.6} />
+              <line x1={426} y1={378} x2={424} y2={414} className="pstroke-thin" opacity={0.6} />
             </g>
           ),
         }
       )}
 
-      {/* exhaust */}
+      {/* exhaust — chrome slash-cut, low-slung cruiser style */}
       {P('exhaust',
-        <path className="hitpath" d="M 452 408 C 436 434 440 460 468 468 C 500 476 560 478 620 476 L 704 470 M 704 470 C 710 474 716 478 724 478" strokeWidth={22} />,
+        <path className="hitpath" d="M 448 412 C 432 438 436 464 464 472 C 496 480 556 482 616 480 L 698 474 M 698 474 C 704 478 712 482 722 482" strokeWidth={22} />,
         {
           children: (
             <g>
-              <path d="M 452 408 C 436 434 440 460 468 468 C 500 476 560 478 620 476 L 704 470" className="pstroke" />
-              <path d="M 704 470 C 710 474 716 478 724 478" className="pstroke-thin" />
-              <line x1={560} y1={477} x2={560} y2={486} className="pstroke-thin" opacity={0.5} />
-              <line x1={620} y1={476} x2={620} y2={485} className="pstroke-thin" opacity={0.5} />
+              <path d="M 448 412 C 432 438 436 464 464 472 C 496 480 556 482 616 480 L 698 474" className="pstroke" />
+              <path d="M 698 474 C 704 478 712 482 722 482" className="pstroke-thin" />
+              <line x1={556} y1={482} x2={556} y2={491} className="pstroke-thin" opacity={0.5} />
+              <line x1={616} y1={480} x2={616} y2={489} className="pstroke-thin" opacity={0.5} />
+              <path d="M 698 474 L 722 474" className="pstroke" strokeWidth={3.5} opacity={0.7} />
             </g>
           ),
         }
@@ -104,67 +108,69 @@ export default function CLC250Schematic({ health, selected, onSelect, onHover, o
 
       {/* chain */}
       {P('chain',
-        <path className="hitpath" d="M 578 448 L 744 452 M 578 448 L 744 452" strokeWidth={20} />,
+        <path className="hitpath" d="M 576 452 L 746 456 M 576 452 L 746 456" strokeWidth={20} />,
         {
-          children: <ChainRun sp1={{ x: 578, y: 448 }} sp2={{ x: 744, y: 454 }} sag={5} />,
+          children: <ChainRun sp1={{ x: 576, y: 452 }} sp2={{ x: 746, y: 458 }} sag={5} />,
         }
       )}
 
       {/* rear suspension — twin shocks, raked */}
       {P('rear-susp',
-        <path className="hitpath" d="M 632 320 L 720 452 M 648 322 L 734 452" strokeWidth={22} />,
+        <path className="hitpath" d="M 634 326 L 722 456 M 650 328 L 738 456" strokeWidth={22} />,
         {
           children: (
             <g>
-              <TwinShock x1={636} y1={318} x2={718} y2={450} />
-              <TwinShock x1={650} y1={320} x2={732} y2={450} />
+              <TwinShock x1={638} y1={324} x2={720} y2={454} />
+              <TwinShock x1={652} y1={326} x2={736} y2={454} />
             </g>
           ),
         }
       )}
 
-      {/* front fork + gaiters */}
+      {/* front fork — raked cruiser fork with gaiters */}
       {P('front-fork',
-        <path className="hitpath" d="M 348 314 L 257 466 M 360 314 L 264 466" strokeWidth={22} />,
+        <path className="hitpath" d="M 344 324 L 253 466 M 356 324 L 262 466" strokeWidth={22} />,
         {
           children: (
             <g>
-              <path d="M 352 316 L 255 468" className="pstroke" />
-              <path d="M 364 318 L 264 468" className="pstroke-thin" opacity={0.7} />
-              <path d="M 344 330 L 344 360 M 356 330 L 356 360 M 344 380 L 344 410 M 356 380 L 356 410" className="pstroke-thin" opacity={0.5} />
+              <path d="M 348 326 L 251 468" className="pstroke" />
+              <path d="M 360 328 L 262 468" className="pstroke-thin" opacity={0.7} />
+              <path d="M 340 344 L 340 374 M 352 344 L 352 374 M 340 394 L 340 424 M 352 394 L 352 424" className="pstroke-thin" opacity={0.5} />
             </g>
           ),
         }
       )}
 
-      {/* cockpit — wide swept bars */}
+      {/* cockpit — wide swept-back pullback bars */}
       {P('cockpit',
-        <path className="hitpath" d="M 368 250 C 352 242 336 236 322 232 M 352 240 L 344 212" strokeWidth={22} />,
+        <path className="hitpath" d="M 362 258 C 344 248 326 240 312 234 M 346 248 L 340 216" strokeWidth={22} />,
         {
           children: (
             <g>
-              <path d="M 368 250 C 354 244 342 240 332 236" className="pstroke" />
-              <rect x={326} y={226} width={14} height={12} rx={2} className="pstroke-thin" />
-              <path d="M 352 242 L 344 214" className="pstroke-thin" />
-              <ellipse cx={342} cy={208} rx={11} ry={7} className="pstroke-thin" />
+              <path d="M 362 258 C 346 250 334 244 322 238" className="pstroke" />
+              <rect x={314} y={228} width={14} height={12} rx={2} className="pstroke-thin" />
+              <path d="M 346 248 L 340 216" className="pstroke-thin" />
+              <ellipse cx={338} cy={210} rx={11} ry={7} className="pstroke-thin" />
+              <path d="M 322 238 C 316 234 308 230 298 226" className="pstroke-thin" opacity={0.5} />
+              <circle cx={296} cy={224} r={4} className="pstroke-thin" opacity={0.4} />
             </g>
           ),
         }
       )}
 
-      {/* fuel system — water-drop tank */}
+      {/* fuel system — water-drop / teardrop tank, low and long */}
       {P('fuel-system',
-        <path className="hitpath" d="M 400 240 C 420 216 470 208 510 214 C 546 220 566 240 574 264 C 560 282 520 288 486 284 L 440 276 C 420 270 404 258 400 240 Z" strokeWidth={22} />,
+        <path className="hitpath" d="M 394 250 C 414 224 462 214 502 220 C 540 226 562 246 570 270 C 556 290 516 296 482 292 L 436 284 C 416 278 400 266 394 250 Z" strokeWidth={22} />,
         {
           children: (
             <g>
               <path
-                d="M 400 240 C 420 216 470 208 510 214 C 546 220 566 240 574 264 C 560 282 520 288 486 284 L 440 276 C 420 270 404 258 400 240 Z"
+                d="M 394 250 C 414 224 462 214 502 220 C 540 226 562 246 570 270 C 556 290 516 296 482 292 L 436 284 C 416 278 400 266 394 250 Z"
                 className="pfill"
                 fill="rgba(0,229,255,0.05)"
               />
-              <path d="M 460 226 C 490 222 520 228 538 240 M 470 240 C 496 238 516 244 530 254" className="pstroke-thin" opacity={0.4} />
-              <circle cx={448} cy={236} r={6} className="pstroke-thin" opacity={0.5} />
+              <path d="M 454 232 C 484 228 514 234 532 246 M 464 246 C 490 244 510 250 524 260" className="pstroke-thin" opacity={0.4} />
+              <circle cx={442} cy={242} r={6} className="pstroke-thin" opacity={0.5} />
             </g>
           ),
         }
@@ -172,31 +178,32 @@ export default function CLC250Schematic({ health, selected, onSelect, onHover, o
 
       {/* bodywork — rear fender + front fender */}
       {P('bodywork',
-        <path className="hitpath" d="M 574 268 C 600 262 636 262 656 270 L 660 292 C 632 288 600 284 574 282 Z M 660 292 L 720 296 L 726 300 L 660 302 Z M 720 298 L 760 286 L 766 292 L 726 304 Z M 180 424 A 110 110 0 0 1 330 412 M 770 448 C 798 434 826 434 848 448 L 846 460" strokeWidth={20} />,
+        <path className="hitpath" d="M 570 274 C 596 268 632 268 654 276 L 658 298 C 630 294 598 290 570 286 Z M 658 298 L 722 302 L 728 306 L 658 308 Z M 722 304 L 762 292 L 768 298 L 728 310 Z M 176 428 A 108 108 0 0 1 326 416 M 772 450 C 800 436 828 436 850 450 L 848 462" strokeWidth={20} />,
         {
           children: (
             <g>
-              <path d="M 574 268 C 600 262 636 262 656 270 L 660 292 C 632 288 600 284 574 282 Z" className="pfill" fill="rgba(0,229,255,0.05)" />
-              <path d="M 660 292 L 720 296 L 726 300 L 660 302 Z" className="pfill" fill="rgba(0,229,255,0.05)" />
-              <path d="M 720 298 L 760 286 L 766 292 L 726 304 Z" className="pfill" fill="rgba(0,229,255,0.06)" />
-              <path d="M 180 424 A 110 110 0 0 1 330 412" className="pstroke" />
-              <path d="M 770 448 C 798 434 826 434 848 448 L 846 460 C 826 448 798 448 772 458 Z" className="pstroke-thin" />
-              <path d="M 668 490 L 678 490" className="pstroke-thin" opacity={0.5} />
+              <path d="M 570 274 C 596 268 632 268 654 276 L 658 298 C 630 294 598 290 570 286 Z" className="pfill" fill="rgba(0,229,255,0.05)" />
+              <path d="M 658 298 L 722 302 L 728 306 L 658 308 Z" className="pfill" fill="rgba(0,229,255,0.05)" />
+              <path d="M 722 304 L 762 292 L 768 298 L 728 310 Z" className="pfill" fill="rgba(0,229,255,0.06)" />
+              <path d="M 176 428 A 108 108 0 0 1 326 416" className="pstroke" />
+              <path d="M 772 450 C 800 436 828 436 850 450 L 848 462 C 828 450 800 450 776 460 Z" className="pstroke-thin" />
+              <path d="M 666 492 L 676 492" className="pstroke-thin" opacity={0.5} />
             </g>
           ),
         }
       )}
 
-      {/* low cruiser seat */}
+      {/* low sculpted cruiser seat — rider sits IN the bike */}
       {P('bodywork', null, {
         children: (
           <g>
-            <path d="M 574 282 C 610 276 646 274 682 276 L 690 274 C 712 270 726 272 732 278 L 706 292 L 668 298 C 640 302 606 304 574 306 Z" className="pstroke" />
+            <path d="M 570 286 C 606 280 642 278 680 280 L 688 278 C 710 274 724 276 730 282 L 704 296 L 666 302 C 638 306 604 308 570 310 Z" className="pstroke" />
+            <path d="M 590 294 C 618 290 648 288 676 290" className="pstroke-thin" opacity={0.35} />
           </g>
         ),
       })}
 
-      {/* wheels */}
+      {/* wheels — spoked cruiser style */}
       {P('front-wheel', <circle className="hitpath" cx={F.x} cy={F.y} r={66} fill="none" strokeWidth={30} />, {
         children: <WheelRim cx={F.x} cy={F.y} rim={58} rotate={-8} double />,
       })}
@@ -204,7 +211,7 @@ export default function CLC250Schematic({ health, selected, onSelect, onHover, o
         children: <WheelRim cx={R.x} cy={R.y} rim={62} rotate={-4} double />,
       })}
 
-      {/* tyres */}
+      {/* tyres — fat cruiser rubber */}
       {P('tyres', null, {
         children: (
           <>
@@ -214,7 +221,7 @@ export default function CLC250Schematic({ health, selected, onSelect, onHover, o
         ),
       })}
 
-      {/* brakes */}
+      {/* front brake */}
       {P('front-brake', <circle className="hitpath" cx={F.x} cy={F.y} r={28} fill="none" strokeWidth={22} />, {
         children: (
           <g>
